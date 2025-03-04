@@ -1,6 +1,6 @@
-package Repository;
+package com.example.Examen_AccesoADatos.Repository;
 
-import Model.MyObject;
+import com.example.Examen_AccesoADatos.Model.MyObject;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

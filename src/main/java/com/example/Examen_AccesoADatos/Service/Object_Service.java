@@ -1,8 +1,7 @@
-package Service;
+package com.example.Examen_AccesoADatos.Service;
 
-import Model.API_Response;
-import Model.MyObject;
-import Repository.Object_Repository;
+import com.example.Examen_AccesoADatos.Model.MyObject;
+import com.example.Examen_AccesoADatos.Repository.Object_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

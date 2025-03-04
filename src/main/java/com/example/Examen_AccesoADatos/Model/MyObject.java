@@ -1,4 +1,4 @@
-package Model;
+package com.example.Examen_AccesoADatos.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;

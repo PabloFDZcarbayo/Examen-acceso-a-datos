@@ -1,8 +1,8 @@
-package Controler;
+package com.example.Examen_AccesoADatos.Controler;
 
-import Model.API_Response;
-import Model.MyObject;
-import Service.Object_Service;
+import com.example.Examen_AccesoADatos.Model.API_Response;
+import com.example.Examen_AccesoADatos.Model.MyObject;
+import com.example.Examen_AccesoADatos.Service.Object_Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

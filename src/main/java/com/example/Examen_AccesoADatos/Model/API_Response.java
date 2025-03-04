@@ -1,4 +1,4 @@
-package Model;
+package com.example.Examen_AccesoADatos.Model;
 
 import lombok.Getter;
 import lombok.Setter;
