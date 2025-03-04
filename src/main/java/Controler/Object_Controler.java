@@ -2,6 +2,7 @@ package Controler;
 
 import Model.API_Response;
 import Service.Object_Service;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.List;
 public class Object_Controler {
     private final Object_Service objectService;
 
+    @Autowired
     public Object_Controler(Object_Service objectService) {
         this.objectService = objectService;
     }
