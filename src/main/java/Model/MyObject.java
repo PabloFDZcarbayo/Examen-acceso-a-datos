@@ -6,8 +6,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "object")
-public class Object {
+@Table(name = "objects")
+public class MyObject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
