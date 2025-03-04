@@ -19,7 +19,7 @@ public class Object_Controler {
     }
 
     @PostMapping
-    public ResponseEntity<API_Response<Object>> save(@RequestBody Object object) {
+    public ResponseEntity<Object> save(@RequestBody Object object) {
         try {
             Object newObject = objectService.save(object);
             return ResponseEntity.ok(new API_Response<>(true, "Object saved successfully", newObject));
