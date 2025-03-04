@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/api/v1/ExamenAccesoADatos")
+@RequestMapping("api/v1/examen")
 public class Object_Controler {
     private final Object_Service objectService;
 
