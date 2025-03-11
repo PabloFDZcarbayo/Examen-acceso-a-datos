@@ -116,4 +116,17 @@ public class Service {
 
     }
 
+    public Alquiler returnAlquiler(Long id) {
+        Alquiler alquiler = alquilerRepository.findById(id).orElse(null);
+        if (alquiler != null) {
+            Coche coche = cocheRepository.findById(alquiler.getCarId().getId()).orElse(null);
+            coche.setAvailable(true);
+            cocheRepository.save(coche);
+            alquilerRepository.delete(alquiler);
+            return alquiler;
+        } else {
+            return null;
+        }
+    }
+
 }

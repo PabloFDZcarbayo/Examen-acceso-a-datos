@@ -145,7 +145,7 @@ public class Object_Controler {
         }
     }
 
-    @PostMapping("/saveAlquiler")
+    @PostMapping("/rentals")
     public ResponseEntity<API_Response<Alquiler>> saveAlquiler(@RequestBody Alquiler alquiler) {
         try {
             Alquiler newAlquiler = service.saveAlquiler(alquiler);
@@ -153,8 +153,6 @@ public class Object_Controler {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(new API_Response<>(false, e.getMessage(), null));
         }
-
     }
-
 
 }
