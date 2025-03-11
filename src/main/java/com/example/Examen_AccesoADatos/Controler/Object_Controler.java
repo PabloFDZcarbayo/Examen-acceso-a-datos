@@ -2,7 +2,7 @@ package com.example.Examen_AccesoADatos.Controler;
 
 import com.example.Examen_AccesoADatos.Model.API_Response;
 import com.example.Examen_AccesoADatos.Model.Usuario;
-import com.example.Examen_AccesoADatos.Service.service;
+import com.example.Examen_AccesoADatos.Service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +12,11 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/examen")
 public class Object_Controler {
-    private final service objectService;
+    private final Service service;
 
     @Autowired
-    public Object_Controler(service service) {
-        this.objectService = service;
+    public Object_Controler(Service service) {
+        this.service = service;
     }
 
     @PostMapping("/saveUser")

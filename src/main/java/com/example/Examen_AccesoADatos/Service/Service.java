@@ -5,12 +5,11 @@ import com.example.Examen_AccesoADatos.Model.Usuario;
 import com.example.Examen_AccesoADatos.Repository.CocheRepository;
 import com.example.Examen_AccesoADatos.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class service {
+@org.springframework.stereotype.Service
+public class Service {
 
     @Autowired
     UserRepository userRepository;
