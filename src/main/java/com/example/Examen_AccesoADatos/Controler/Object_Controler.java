@@ -15,14 +15,14 @@ public class Object_Controler {
     private final service objectService;
 
     @Autowired
-    public Object_Controler(service objectService) {
-        this.objectService = objectService;
+    public Object_Controler(service service) {
+        this.objectService = service;
     }
 
-    @PostMapping("/save")
-    public ResponseEntity <API_Response<Usuario>> save(@RequestBody Usuario object) {
+    @PostMapping("/saveUser")
+    public ResponseEntity <API_Response<Usuario>> saveUsuario(@RequestBody Usuario usuario) {
         try {
-            Usuario newObject = objectService.save(object);
+            Usuario newObject = objectService.saveUser(usuario);
             return ResponseEntity.ok(new API_Response<>(true, "Object saved successfully", newObject));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(new API_Response<>(false, e.getMessage(), null));
