@@ -2,6 +2,7 @@ package com.example.Examen_AccesoADatos.Service;
 
 import com.example.Examen_AccesoADatos.Model.Coche;
 import com.example.Examen_AccesoADatos.Model.Usuario;
+import com.example.Examen_AccesoADatos.Repository.AlquilerRepository;
 import com.example.Examen_AccesoADatos.Repository.CocheRepository;
 import com.example.Examen_AccesoADatos.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class Service {
 
     @Autowired
     CocheRepository cocheRepository;
+
+    @Autowired
+    AlquilerRepository alquilerRepository;
 
 
     public Usuario saveUser(Usuario usuario) {
@@ -86,6 +90,14 @@ public class Service {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public List<Coche> getCarByBrand(String brand) {
+        return cocheRepository.findByBrand(brand);
+    }
+
+    public List<Coche> getAvailableCars() {
+        return cocheRepository.findByAvailable(true);
     }
 
 

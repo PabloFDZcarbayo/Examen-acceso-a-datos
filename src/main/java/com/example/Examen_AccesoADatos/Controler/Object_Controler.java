@@ -92,6 +92,27 @@ public class Object_Controler {
         }
     }
 
+    @GetMapping("/getCarByBrand/{brand}")
+    public ResponseEntity<API_Response<List<Coche>>> getCarByBrand(@PathVariable("brand") String brand) {
+        try {
+            List<Coche> cars = service.getCarByBrand(brand);
+            return ResponseEntity.ok(new API_Response<>(true, "Results:", cars));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(new API_Response<>(false, "Error", null));
+        }
+    }
+
+    @GetMapping("/getAvailableCars")
+    public ResponseEntity<API_Response<List<Coche>>> getAvailableCars() {
+        try {
+            List<Coche> cars = service.getAvailableCars();
+            return ResponseEntity.ok(new API_Response<>(true, "Results:", cars));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(new API_Response<>(false, "Error", null));
+        }
+    }
+
+
     @GetMapping("/allCars")
     public ResponseEntity<API_Response<List<Coche>>> getAllCars() {
         try {
