@@ -1,11 +1,13 @@
 package com.example.Examen_AccesoADatos.Service;
 
+import com.example.Examen_AccesoADatos.Model.Alquiler;
 import com.example.Examen_AccesoADatos.Model.Coche;
 import com.example.Examen_AccesoADatos.Model.Usuario;
 import com.example.Examen_AccesoADatos.Repository.AlquilerRepository;
 import com.example.Examen_AccesoADatos.Repository.CocheRepository;
 import com.example.Examen_AccesoADatos.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -100,5 +102,18 @@ public class Service {
         return cocheRepository.findByAvailable(true);
     }
 
+
+
+    public Alquiler saveAlquiler(Alquiler alquiler) {
+        Coche coche = cocheRepository.findById(alquiler.getCarId().getId()).orElse(null);
+        if (coche.getAvailable()) {
+            coche.setAvailable(false);
+            cocheRepository.save(coche);
+            return alquilerRepository.save(alquiler);
+        } else {
+            return null;
+        }
+
+    }
 
 }

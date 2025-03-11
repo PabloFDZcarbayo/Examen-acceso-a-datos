@@ -1,6 +1,7 @@
 package com.example.Examen_AccesoADatos.Controler;
 
 import com.example.Examen_AccesoADatos.Model.API_Response;
+import com.example.Examen_AccesoADatos.Model.Alquiler;
 import com.example.Examen_AccesoADatos.Model.Coche;
 import com.example.Examen_AccesoADatos.Model.Usuario;
 import com.example.Examen_AccesoADatos.Service.Service;
@@ -142,6 +143,17 @@ public class Object_Controler {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(new API_Response<>(false, "Error: Coche no encontrado", null));
         }
+    }
+
+    @PostMapping("/saveAlquiler")
+    public ResponseEntity<API_Response<Alquiler>> saveAlquiler(@RequestBody Alquiler alquiler) {
+        try {
+            Alquiler newAlquiler = service.saveAlquiler(alquiler);
+            return ResponseEntity.ok(new API_Response<>(true, "Alquiler saved successfully", newAlquiler));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(new API_Response<>(false, e.getMessage(), null));
+        }
+
     }
 
 
