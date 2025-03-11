@@ -62,7 +62,7 @@ public class Object_Controler {
         }
     }
 
-    @PutMapping("upadateUser/{id}")
+    @PutMapping("updateUser/{id}")
     public ResponseEntity<API_Response<Usuario>> updateLibro(@PathVariable("id") Long id, @RequestBody Usuario usuario) {
         try {
             Usuario updatedUser = service.updateUser(id, usuario);
@@ -113,7 +113,7 @@ public class Object_Controler {
         }
     }
 
-    @PutMapping("upadateCar/{id}")
+    @PutMapping("updateCar/{id}")
     public ResponseEntity<API_Response<Coche>> updateCar(@PathVariable("id") Long id, @RequestBody Coche coche) {
         try {
             Coche updatedCoche = service.updateCar(id, coche);
